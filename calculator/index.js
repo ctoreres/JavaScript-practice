@@ -9,5 +9,5 @@ function calculate(){
 }
 
  function clearDisplay(){
-    display.textContent = ""
+    display.value = ""
  }
