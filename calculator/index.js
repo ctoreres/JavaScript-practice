@@ -9,5 +9,10 @@ function clearDisplay(){
 }
 
 function calculate(){
-    display.value = eval(display.value);
+    try{
+        display.value = eval(display.value);
+    }
+    catch(error){
+        display.value = "Syntax Error";
+    }
 }
