@@ -1,60 +1,63 @@
-body{
-    text-align: center;
-    font-family: monospace;
-    background-color: rgb(226, 223, 223);
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
 }
 
-h1{
-    font-size: 2.5rem;
-    font-weight: bold;
-    font-family: Arial, Helvetica, sans-serif;
-    color: rgb(51, 50, 50);
+* {
+    color: white;
+    text-align: center;
+    font-family: Arial, sans-serif;
 }
 
 #container{
-    text-align: center;
-    border: black 2px solid;
-    width: 50%;
-    margin: auto;
-    padding: 20px;
-    border-radius: 20px;
-    border-width: 3px;
-    background-color: white;
-}
-
-#display{
-    font-size: 4rem;
-    font-weight: bold;
-    color: rgb(67, 66, 66);
-    text-shadow: 2px 2px 2px rgb(44, 44, 44);
-    margin-bottom: 25px;
-}
-
-#button-container{
     display: flex;
-    align-items: center;
-    justify-content: center;
-    flex-direction: row;
-    gap: 10px;
+    flex-direction: column;
+    border-radius: 15px;
+    max-width: 500px;
+    overflow: hidden;
 }
 
-button{
-    color: white;
+#display {
+    width: 100%;
+    padding: 20px;
+    font-size: 5rem;
+    text-align: left;
     border: none;
-    border-radius: 4px;
-    font-size: 1.5rem;
-    font-weight: 540;
-    min-width: 125px;
-    padding: 4px 10px;
+    background-color: rgb(48, 48, 48);
+}
+
+#keys{
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 5px;
+    padding: 20px;
+    background-color: rgb(33, 33, 33);
+}
+
+button {
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+    border: none;
+    padding: 15px;
+    font-size: 2.5rem;
+    font-weight: bold;
     cursor: pointer;
 }
 
-#start-button{
-    background-color: rgb(79, 196, 79);
+button:hover{
+    filter: brightness(150%);
 }
-#stop-button{
-    background-color: rgb(220, 60, 60);
+button:active{
+    filter: brightness(200%);
 }
-#reset-button{
-    background-color: rgb(77, 176, 233);
+
+.operators{
+    background-color: rgb(235, 161, 12);
+}
+
+.numbers{
+    background-color: rgb(78, 78, 78);
 }
