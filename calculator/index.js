@@ -4,10 +4,10 @@ function appendToDisplay(input){
     display.value += input;
 }
 
-function calculate(){
-
+function clearDisplay(){
+    display.value = "";
 }
 
- function clearDisplay(){
-    display.value = ""
- }
+function calculate(){
+    display.value = eval(display.value);
+}
