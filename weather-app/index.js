@@ -39,3 +39,36 @@ async function getWeatherData(city){
 }
 
 
+function displayWeatherInfo(data){
+
+    const {name: city, 
+           main: {temp, humidity},
+           weather: [{description, id}]} = data;
+
+    card.textContent = "";
+    card.style.display = "flex";      
+
+    const cityDisplay = document.createElement("h1");
+    const tempDisplay = document.createElement("p");
+    const humidityDisplay = document.createElement("p");
+    const descDisplay = document.createElement("p");
+    const weatherEmoji = document.createElement("p");
+
+    cityDisplay.classList.add("cityDisplay");
+    tempDisplay.classList.add("tempDisplay");
+    humidityDisplay.classList.add("humidityDisplay");
+    descDisplay.classList.add("descDisplay");
+    weatherEmoji.classList.add("weatherEmoji");
+
+    cityDisplay.textContent = city;
+    tempDisplay.textContent = `${((temp - 273.15) * (9/5) + 32).toFixed(2)}°F`;
+    humidityDisplay.textContent = `Humidity: ${humidity}`;
+    descDisplay.textContent = description;
+    weatherEmoji.textContent = getWeatherEmoji(id);
+
+    card.append(cityDisplay, tempDisplay, humidityDisplay,
+                descDisplay, weatherEmoji);
+
+}
+
+
