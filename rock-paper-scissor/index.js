@@ -3,6 +3,11 @@ const playerDisplay = document.getElementById("playerDisplay");
 const computerDisplay = document.getElementById("computerDisplay");
 const resultDisplay = document.getElementById("result");
 
+const playerScoreDisplay = document.getElementById("playerScoreDisplay");
+const computerScoreDisplay = document.getElementById("computerScoreDisplay");
+let playerScore = 0;
+let computerScore = 0;
+
 
 function playGame(playerChoice){
     const computerChoice = choices[Math.floor(Math.random() * choices.length)];
@@ -41,9 +46,14 @@ function playGame(playerChoice){
     switch(result){
         case "YOU LOSE!":
             resultDisplay.classList.replace("blueText", "redText");
+            computerScore++;
             break;
         case "YOU WIN!":
             resultDisplay.classList.replace("blueText", "greenText");
+            playerScore++;
             break;
     }
+
+    playerScoreDisplay.textContent = playerScore;
+    computerScoreDisplay.textContent = computerScore;
 }
