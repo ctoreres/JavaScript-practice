@@ -37,5 +37,16 @@ h1{
 #result{
     font-size: 4.5rem;
     margin: 10px 0px;
-    color: rgb(66, 66, 233);
+}
+
+.greenText {
+    color: greenyellow;
+}
+
+.redText{
+    color: red;
+}
+
+.blueText{
+    color: blue;
 }

@@ -8,9 +8,6 @@ function playGame(playerChoice){
     const computerChoice = choices[Math.floor(Math.random() * choices.length)];
     let result = "";
 
-    computerDisplay.textContent = `PLAYER: ${computerChoice}`;
-    playerDisplay.textContent = `Computer: ${playerChoice}`;
-
     if (playerChoice === computerChoice){
         result = "IT'S A TIE!";
     }
@@ -34,5 +31,19 @@ function playGame(playerChoice){
         }
     }
 
+    computerDisplay.textContent = `PLAYER: ${computerChoice}`;
+    playerDisplay.textContent = `Computer: ${playerChoice}`;
     resultDisplay.textContent = result;
+
+    resultDisplay.classList.remove("blueText", "redText", "greenText");
+    resultDisplay.classList.add("blueText");
+
+    switch(result){
+        case "YOU LOSE!":
+            resultDisplay.classList.replace("blueText", "redText");
+            break;
+        case "YOU WIN!":
+            resultDisplay.classList.replace("blueText", "greenText");
+            break;
+    }
 }
