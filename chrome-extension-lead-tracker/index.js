@@ -10,3 +10,7 @@ inputBtn.addEventListener("click", (event) => {
     inputEl.value = "";
 });
 
+function displayLead(){
+    let lead = `<li>${inputEl.value}</li>`;
+    ulEl.innerHTML += lead;
+}
