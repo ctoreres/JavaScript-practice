@@ -6,11 +6,16 @@ let myLeads = [];
 inputBtn.addEventListener("click", (event) => {
     myLeads.push(inputEl.value);
 
-    displayLead();
+    displayLeads();
     inputEl.value = "";
 });
 
-function displayLead(){
-    let lead = `<li>${inputEl.value}</li>`;
-    ulEl.innerHTML += lead;
+function displayLeads(){
+    let listItems = [];
+
+    for (let lead of myLeads){
+        listItems += `<li><a target="_blank" href="${lead}">${lead}</a></li>`;
+    };
+
+    ulEl.innerHTML = listItems;
 }
