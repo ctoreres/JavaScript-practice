@@ -27,6 +27,16 @@ button:hover{
     background-color: #538139;
 }
 
+#clear-btn{
+    background-color: white;
+    color: #5f9341;
+    border: 2px solid #5f9341;
+}
+
+#clear-btn:hover{
+    background-color: #d4ae60;
+}
+
 ul{
     list-style: none;
     margin-left: 0;
