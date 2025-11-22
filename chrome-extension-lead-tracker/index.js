@@ -1,5 +1,6 @@
 const inputBtn = document.getElementById("input-btn");
 const clearBtn = document.getElementById("clear-btn");
+const saveBtn = document.getElementById("save-btn");
 const inputEl = document.getElementById("input-el");
 const ulEl = document.getElementById("ul-el");
 
@@ -23,6 +24,21 @@ inputBtn.addEventListener("click", (event) => {
     displayLeads();
     inputEl.value = "";
 });
+
+saveBtn.addEventListener("click", () => {
+    localStorage.setItem("current", window.location.href);
+
+    const currentTab = localStorage.getItem("current");
+
+    myLeads.push(currentTab);
+
+    localStorage.setItem("myLeads", JSON.stringify(myLeads));
+
+    displayLeads();
+
+    console.log("Saved:", currentTab);
+});
+
 
 clearBtn.addEventListener("click", () => {
     localStorage.clear();
