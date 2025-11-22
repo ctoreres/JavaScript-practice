@@ -16,11 +16,19 @@ if (leadsFromLocalStorage) {
     myLeads = [];
 }
 
-inputBtn.addEventListener("click", () => {
+inputBtn.addEventListener("click", (event) => {
+    myLeads.push(inputEl.value);
 
+    localStorage.setItem("myLeads", JSON.stringify(myLeads));
+
+    displayLeads();
+    inputEl.value = "";
+});
+
+saveBtn.addEventListener("click", () => {
     chrome.tabs.query({ active: true, currentWindow: true }, function (tabs) {
         const activeTab = tabs[0];
-        const activeTabUrl = activeTab.url;   // get the current tab URL
+        const activeTabUrl = activeTab.url;
 
         myLeads.push(activeTabUrl);
 
@@ -29,24 +37,7 @@ inputBtn.addEventListener("click", () => {
         displayLeads();
         inputEl.value = "";
     });
-
 });
-
-
-saveBtn.addEventListener("click", () => {
-    localStorage.setItem("current", window.location.href);
-
-    const currentTab = localStorage.getItem("current");
-
-    myLeads.push(currentTab);
-
-    localStorage.setItem("myLeads", JSON.stringify(myLeads));
-
-    displayLeads();
-
-    console.log("Saved:", currentTab);
-});
-
 
 clearBtn.addEventListener("click", () => {
     localStorage.clear();
