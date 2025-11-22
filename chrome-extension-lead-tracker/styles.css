@@ -2,6 +2,7 @@ body{
     margin: 0;
     padding: 16px;
     font-family: Arial, Helvetica, sans-serif;
+    min-width: 400px;
 }
 
 input{
@@ -26,6 +27,26 @@ button:hover{
     background-color: #538139;
 }
 
+#clear-btn{
+    background-color: white;
+    color: #5f9341;
+    border: 2px solid #5f9341;
+}
+
+#clear-btn:hover{
+    background-color: #d4ae60;
+}
+
 ul{
     list-style: none;
+    margin-left: 0;
+    padding-left: 0;
+}
+
+li{
+    margin-bottom: 5px;
+}
+
+li a{
+    color: #5f9341;
 }

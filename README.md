@@ -11,8 +11,8 @@ JavaScript-practice is a collection of small, interactive projects crafted to re
 
 This project aims to strengthen your core JavaScrip skills with real-world, engaging examples. This core features incluse:
 
--**Interactive Exercises:** Essential programming concepts with projects like calculators, stopwatches, and clocks.
--**API Integration:** Fetch and display dynamic data, such as Pokemon images, to enhance your understanding of asynchronous operations.
--**Real-Time Features:** Experience live updates with clocks and timers that demonstrate time-based functionalities.
--**Modular Architecture:** Well-structed code ensures seamless integration and easy customization across projects.
--**Hands-On Learning:** Quickly apply concepts through practical, project-based examples designed for developers.
+- **Interactive Exercises:** Essential programming concepts with projects like calculators, stopwatches, and clocks.
+- **API Integration:** Fetch and display dynamic data, such as Pokemon images, to enhance your understanding of asynchronous operations.
+- **Real-Time Features:** Experience live updates with clocks and timers that demonstrate time-based functionalities.
+- **Modular Architecture:** Well-structed code ensures seamless integration and easy customization across projects.
+- **Hands-On Learning:** Quickly apply concepts through practical, project-based examples designed for developers.
