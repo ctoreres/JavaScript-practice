@@ -1,13 +1,18 @@
 const inputBtn = document.getElementById("input-btn");
+const clearBtn = document.getElementById("clear-btn");
 const inputEl = document.getElementById("input-el");
 const ulEl = document.getElementById("ul-el");
+
 
 let myLeads = [];
 let leadsFromLocalStorage = JSON.parse(localStorage.getItem("myLeads"));
 
-if (leadsFromLocalStorage){
+
+if (leadsFromLocalStorage) {
     myLeads = leadsFromLocalStorage;
     displayLeads();
+} else {
+    myLeads = [];
 }
 
 inputBtn.addEventListener("click", (event) => {
@@ -17,6 +22,12 @@ inputBtn.addEventListener("click", (event) => {
 
     displayLeads();
     inputEl.value = "";
+});
+
+clearBtn.addEventListener("click", () => {
+    localStorage.clear();
+    myLeads = [];
+    displayLeads();
 });
 
 function displayLeads(){
