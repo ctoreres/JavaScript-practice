@@ -16,14 +16,22 @@ if (leadsFromLocalStorage) {
     myLeads = [];
 }
 
-inputBtn.addEventListener("click", (event) => {
-    myLeads.push(inputEl.value);
+inputBtn.addEventListener("click", () => {
 
-    localStorage.setItem("myLeads", JSON.stringify(myLeads));
+    chrome.tabs.query({ active: true, currentWindow: true }, function (tabs) {
+        const activeTab = tabs[0];
+        const activeTabUrl = activeTab.url;   // get the current tab URL
 
-    displayLeads();
-    inputEl.value = "";
+        myLeads.push(activeTabUrl);
+
+        localStorage.setItem("myLeads", JSON.stringify(myLeads));
+
+        displayLeads();
+        inputEl.value = "";
+    });
+
 });
+
 
 saveBtn.addEventListener("click", () => {
     localStorage.setItem("current", window.location.href);
