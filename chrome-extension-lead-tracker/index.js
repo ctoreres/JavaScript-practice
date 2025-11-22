@@ -14,7 +14,10 @@ function displayLeads(){
     let listItems = [];
 
     for (let lead of myLeads){
-        listItems += `<li><a target="_blank" href="${lead}">${lead}</a></li>`;
+        listItems += `
+                        <li>
+                            <a target="_blank" href="${lead}">${lead}</a>
+                        </li>`;
     };
 
     ulEl.innerHTML = listItems;
